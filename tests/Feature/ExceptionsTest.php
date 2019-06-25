@@ -2,8 +2,8 @@
 
 namespace ValidationManagerTests\Feature;
 
-use ValidationManagerTests\TestCase;
 use ValidationManagerTests\Feature\Validators\AlwaysFailsValidator;
+use ValidationManagerTests\TestCase;
 use Webflorist\ValidationManager\Exceptions\AttributeAlreadyRegistered;
 use Webflorist\ValidationManager\Exceptions\MessageAlreadyRegistered;
 use Webflorist\ValidationManager\Exceptions\RuleAlreadyInUseException;
@@ -33,16 +33,16 @@ class ExceptionsTest extends TestCase
     {
         $this->expectException(MessageAlreadyRegistered::class);
         $this->expectExceptionMessage('Message with key "alwaysfails" is already registered for locale "en" with this text: "Thou hast failed again!"');
-        app()[ValidationManager::class]->registerMessage('alwaysfails','Thou hast failed again!');
-        app()[ValidationManager::class]->registerMessage('alwaysfails','Thou hast failed again!');
+        app()[ValidationManager::class]->registerMessage('alwaysfails', 'Thou hast failed again!');
+        app()[ValidationManager::class]->registerMessage('alwaysfails', 'Thou hast failed again!');
     }
 
     public function testMessageAlreadyRegisteredFromLanguageFile()
     {
         $this->expectException(MessageAlreadyRegistered::class);
         $this->expectExceptionMessage('Message with key "alwaysfails" is already registered for locale "en" with this text: "Thou hast failed again!"');
-        app()[ValidationManager::class]->registerMessage('alwaysfails','Thou hast failed again!');
-        app()[ValidationManager::class]->registerMessagesFromLanguageFile('messages',"ValidationManagerTests");
+        app()[ValidationManager::class]->registerMessage('alwaysfails', 'Thou hast failed again!');
+        app()[ValidationManager::class]->registerMessagesFromLanguageFile('messages', "ValidationManagerTests");
 
     }
 
@@ -50,8 +50,8 @@ class ExceptionsTest extends TestCase
     {
         $this->expectException(AttributeAlreadyRegistered::class);
         $this->expectExceptionMessage('Attribute "iAlwaysFail" is already registered for locale "en" with value "Always Failing"');
-        app()[ValidationManager::class]->registerAttribute('iAlwaysFail','Always Failing');
-        app()[ValidationManager::class]->registerAttribute('iAlwaysFail','Always Failing');
+        app()[ValidationManager::class]->registerAttribute('iAlwaysFail', 'Always Failing');
+        app()[ValidationManager::class]->registerAttribute('iAlwaysFail', 'Always Failing');
     }
 
 

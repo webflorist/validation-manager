@@ -7,10 +7,11 @@ use Webflorist\ValidationManager\BaseValidator;
 class StartsAndEndsWithDotValidator extends BaseValidator
 {
 
-    public function validate($attribute, $value, $parameters) {
+    public function validate($attribute, $value, $parameters)
+    {
 
         $isValid = true;
-        
+
         if ($isValid) {
             $isValid = $this->checkStartsWithDot($value);
         }
@@ -23,17 +24,19 @@ class StartsAndEndsWithDotValidator extends BaseValidator
         return $isValid;
 
     }
-    
-    function checkStartsWithDot($value) {
-        if (substr($value,0,1) !== '.') {
+
+    function checkStartsWithDot($value)
+    {
+        if (substr($value, 0, 1) !== '.') {
             $this->setErrorMessage('Value must start with dot.');
             return false;
         }
         return true;
     }
 
-    function checkSEndsWithDot($value) {
-        if (substr($value,-1) !== '.') {
+    function checkSEndsWithDot($value)
+    {
+        if (substr($value, -1) !== '.') {
             $this->setErrorMessage('Value must end with dot.');
             return false;
         }

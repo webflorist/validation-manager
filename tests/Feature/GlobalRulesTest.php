@@ -2,9 +2,9 @@
 
 namespace ValidationManagerTests\Feature;
 
-use ValidationManagerTests\TestCase;
 use ValidationManagerTests\Feature\Validators\AlwaysFailsValidator;
 use ValidationManagerTests\Feature\Validators\StartsAndEndsWithDotValidator;
+use ValidationManagerTests\TestCase;
 use Webflorist\ValidationManager\ValidationManager;
 
 class GlobalRulesTest extends TestCase
@@ -28,11 +28,9 @@ class GlobalRulesTest extends TestCase
 
         $this->assertEquals(
             'validation.alwaysfails',
-            json_decode($this->get($this->testRoute.'?iShouldStartAndEndWithADot=.value.&iAmAGlobalRuleField=value')->baseResponse->getContent())->iAmAGlobalRuleField[0]
+            json_decode($this->get($this->testRoute . '?iShouldStartAndEndWithADot=.value.&iAmAGlobalRuleField=value')->baseResponse->getContent())->iAmAGlobalRuleField[0]
         );
     }
-
-
 
 
 }

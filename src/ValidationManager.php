@@ -5,6 +5,7 @@ namespace Webflorist\ValidationManager;
 use App;
 use Illuminate\Support\Str;
 use ReflectionClass;
+use ReflectionException;
 use Validator;
 use Webflorist\ValidationManager\Exceptions\AttributeAlreadyRegistered;
 use Webflorist\ValidationManager\Exceptions\MessageAlreadyRegistered;
@@ -442,7 +443,7 @@ class ValidationManager
      * Get all built-in laravel-rules.
      *
      * @return array
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     private function getLaravelRules()
     {

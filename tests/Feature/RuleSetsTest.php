@@ -2,6 +2,7 @@
 
 namespace ValidationManagerTests\Feature;
 
+use RuleSets;
 use ValidationManagerTests\TestCase;
 use Webflorist\ValidationManager\Exceptions\RuleSetAlreadyDefined;
 use Webflorist\ValidationManager\Exceptions\RuleSetNotDefined;
@@ -11,13 +12,13 @@ class RuleSetsTest extends TestCase
 
     public function testSetAndGetRuleSet()
     {
-        \RuleSets::set([
-            'myRuleSetKey'=>'my|rules'
+        RuleSets::set([
+            'myRuleSetKey' => 'my|rules'
         ]);
 
         $this->assertEquals(
             'my|rules',
-            \RuleSets::get('myRuleSetKey')
+            RuleSets::get('myRuleSetKey')
         );
     }
 
@@ -25,12 +26,12 @@ class RuleSetsTest extends TestCase
     {
         $this->expectException(RuleSetAlreadyDefined::class);
         $this->expectExceptionMessage('Ruleset with key "myRuleSetKey" is already defined with these rules: "my|rules"');
-        \RuleSets::set([
-            'myRuleSetKey'=>'my|rules'
+        RuleSets::set([
+            'myRuleSetKey' => 'my|rules'
         ]);
 
-        \RuleSets::set([
-            'myRuleSetKey'=>'my|rules'
+        RuleSets::set([
+            'myRuleSetKey' => 'my|rules'
         ]);
     }
 
@@ -38,7 +39,7 @@ class RuleSetsTest extends TestCase
     {
         $this->expectException(RuleSetNotDefined::class);
         $this->expectExceptionMessage('Ruleset with key "iAmNotDefined" is not defined.');
-        \RuleSets::get('iAmNotDefined');
+        RuleSets::get('iAmNotDefined');
     }
 
 }

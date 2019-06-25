@@ -2,10 +2,10 @@
 
 namespace ValidationManagerTests;
 
+use Orchestra\Testbench\TestCase as BaseTestCase;
 use ValidationManagerTests\Feature\Controllers\TestController;
 use Webflorist\ValidationManager\RuleSets\RuleSetsFacade;
 use Webflorist\ValidationManager\ValidationManagerServiceProvider;
-use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -31,7 +31,7 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageAliases($app)
     {
         return [
-            'RuleSets'  => RuleSetsFacade::class,
+            'RuleSets' => RuleSetsFacade::class,
         ];
     }
 
@@ -40,12 +40,12 @@ abstract class TestCase extends BaseTestCase
 
         // Add Translations
         $app['translator']->addNamespace('ValidationManagerTests', __DIR__ . "/Feature/lang");
-	
+
         // Set Config
         $app['config']->set('validation-manager', $this->testConfig);
 
         // Set Test-Route
-        $app['router']->get($this->testRoute, ['uses' => TestController::class.'@test']);
+        $app['router']->get($this->testRoute, ['uses' => TestController::class . '@test']);
 
     }
 

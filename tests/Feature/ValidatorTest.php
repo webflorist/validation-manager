@@ -2,10 +2,10 @@
 
 namespace ValidationManagerTests\Feature;
 
-use ValidationManagerTests\TestCase;
 use ValidationManagerTests\Feature\Validators\AlwaysFailsValidator;
 use ValidationManagerTests\Feature\Validators\StartsAndEndsWithDotValidator;
 use ValidationManagerTests\Feature\Validators\UsesSubvalidationValidator;
+use ValidationManagerTests\TestCase;
 use Webflorist\ValidationManager\ValidationManager;
 
 class ValidatorTest extends TestCase
@@ -42,12 +42,12 @@ class ValidatorTest extends TestCase
             $validator->errors()->get('iAlwaysFail')[0]
         );
     }
-    
+
 
     public function testDefaultErrorMessage()
     {
         app()[ValidationManager::class]->registerValidator(AlwaysFailsValidator::class);
-        app()[ValidationManager::class]->registerMessage('alwaysfails','Thou hast failed again!');
+        app()[ValidationManager::class]->registerMessage('alwaysfails', 'Thou hast failed again!');
 
         $validator = app()[ValidationManager::class]->createValidator4Field(
             'iAlwaysFail',
@@ -64,7 +64,7 @@ class ValidatorTest extends TestCase
     public function testDefaultErrorMessageRegisteredViaLanguageFile()
     {
         app()[ValidationManager::class]->registerValidator(AlwaysFailsValidator::class);
-        app()[ValidationManager::class]->registerMessagesFromLanguageFile('messages',"ValidationManagerTests");
+        app()[ValidationManager::class]->registerMessagesFromLanguageFile('messages', "ValidationManagerTests");
 
         $validator = app()[ValidationManager::class]->createValidator4Field(
             'iAlwaysFail',
@@ -81,8 +81,8 @@ class ValidatorTest extends TestCase
     public function testDefaultErrorMessageWithAttribute()
     {
         app()[ValidationManager::class]->registerValidator(AlwaysFailsValidator::class);
-        app()[ValidationManager::class]->registerMessage('alwaysfails','The field ":attribute" has failed again!');
-        app()[ValidationManager::class]->registerAttribute('iAlwaysFail','Always Failing');
+        app()[ValidationManager::class]->registerMessage('alwaysfails', 'The field ":attribute" has failed again!');
+        app()[ValidationManager::class]->registerAttribute('iAlwaysFail', 'Always Failing');
 
         $validator = app()[ValidationManager::class]->createValidator4Field(
             'iAlwaysFail',
@@ -99,7 +99,7 @@ class ValidatorTest extends TestCase
     public function testDefaultErrorMessageWithAttributeRegisteredViaLanguageFile()
     {
         app()[ValidationManager::class]->registerValidator(AlwaysFailsValidator::class);
-        app()[ValidationManager::class]->registerMessagesFromLanguageFile('messages',"ValidationManagerTests");
+        app()[ValidationManager::class]->registerMessagesFromLanguageFile('messages', "ValidationManagerTests");
         app()[ValidationManager::class]->registerAttributesTranslationId('ValidationManagerTests::attributes');
 
         $validator = app()[ValidationManager::class]->createValidator4Field(
