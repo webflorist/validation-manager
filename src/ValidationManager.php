@@ -270,6 +270,7 @@ class ValidationManager
      * Registers messages from an array (typically coming from a language file) for a locale (uses current locale, if omitted).
      *
      * @param array $messages
+     * @param null|string $locale
      * @throws MessageAlreadyRegistered
      */
     public function registerMessages($messages, $locale = null)

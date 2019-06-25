@@ -9,12 +9,11 @@
   ],
   "require": {
     "laravel/framework": "~5.5",
-    "caouecs/laravel-lang": "~4.0",
-    "ext-mbstring": "*",
-    "ext-json": "*"
+    "ext-mbstring": "*"
   },
   "require-dev": {
-    "orchestra/testbench": "~3.5"
+    "orchestra/testbench": "~3.5",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
