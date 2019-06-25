@@ -15,6 +15,9 @@ This package adds extended functionality for validation with the Laravel framewo
 * Define and retrieve RuleSets via the RuleSets-facade.
 
 ## Installation
+
+Note that this package is configured for automatic discovery for Laravel. Thus the package's Service Provider `Webflorist\ValidationManager\ValidationManagerServiceProvider` and the `RuleSets`-Facade `Webflorist\ValidationManager\RuleSets\RuleSetsFacade` will be automatically registered with Laravel.
+
 1. Require the package via composer:  
 ```php 
 composer require webflorist/validation-manager
