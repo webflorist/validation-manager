@@ -1,0 +1,38 @@
+{
+  "name": "webflorist/validation-manager",
+  "description": "Enhanced validation functionality for Laravel 5.5 and later",
+  "authors": [
+    {
+      "name": "Gerald Buttinger",
+      "email": "gerald@code.florist"
+    }
+  ],
+  "require": {
+    "laravel/framework": "~5.5",
+    "caouecs/laravel-lang": "~4.0",
+    "ext-mbstring": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "orchestra/testbench": "~3.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Webflorist\\ValidationManager\\": "src/",
+      "ValidationManagerTests\\": "tests/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Webflorist\\ValidationManager\\ValidationManagerServiceProvider"
+      ],
+      "aliases": {
+        "RuleSets": "Webflorist\\ValidationManager\\RuleSetsFacade"
+      }
+    }
+  }
+}
