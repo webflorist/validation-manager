@@ -11,10 +11,9 @@ return [
     | with something more reader friendly such as "E-Mail Address" instead
     | of "email". This simply helps us make our message more expressive.
     |
-    | (taken from caouecs/Laravel-lang)
-    |
     */
 
+    // Taken from caouecs/Laravel-lang
     'name'                  => 'Name',
     'username'              => 'Benutzername',
     'email'                 => 'E-Mail-Adresse',
@@ -44,6 +43,27 @@ return [
     'time'                  => 'Uhrzeit',
     'available'             => 'verfügbar',
     'size'                  => 'Größe',
-    'message'               => 'Nachricht'
+    'message'               => 'Nachricht',
+
+    // Additional attributes corresponding to the
+    // hCard format (http://microformats.org/wiki/hcard).
+    'org'                   => 'Organisation',
+    'fn'                    => 'Name',
+    'street_address'        => 'Straße',
+    'extended_address'      => 'Straße 2',
+    'postal_code'           => 'PLZ',
+    'locality'              => 'Stadt',
+    'region'                => 'Staat/Provinz',
+    'country_name'          => 'Land',
+    'tel'                   => 'Telefonnummer',
+    'url'                   => 'Webseite',
+    'logo'                  => 'Logo',
+
+    // Various button-lables.
+    'login'                 => 'Einloggen',
+    'logout'                => 'Ausloggen',
+    'submit'                => 'Absenden',
+    'cancel'                => 'Abbrechen',
+
 
 ];
