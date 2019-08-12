@@ -53,6 +53,7 @@ return [
     'extended_address' => 'Straße 2',
     'postal_code' => 'PLZ',
     'locality' => 'Stadt',
+    'post_office_box' => 'Postfach',
     'region' => 'Staat/Provinz',
     'country_name' => 'Land',
     'tel' => 'Telefonnummer',
