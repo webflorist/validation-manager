@@ -49,10 +49,7 @@ trait ValidationManagerTrait
      *
      * @return array
      */
-    public function getRules()
-    {
-        return $this->rules();
-    }
+    public abstract function getRules();
 
     /**
      * Provides some additional functionality on top of laravel-base-features.
