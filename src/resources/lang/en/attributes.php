@@ -58,6 +58,7 @@ return [
     'country_name' => 'Country',
     'tel' => 'Phone',
     'url' => 'Webseite',
+    'url_placeholder' => 'http://www.example.domain',
     'logo' => 'Logo',
 
     // Various button-lables.
