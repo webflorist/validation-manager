@@ -28,10 +28,10 @@ class ValidationManagerServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . "/resources/lang", "webflorist-validation-manager");
 
         // Register default error messages.
-        $ValidationManager->registerMessagesTranslationId('webflorist-validation-manager::messages');
+        $ValidationManager->registerMessagesTranslationId('webflorist-validation-manager::default_messages');
 
         // Register default attributes.
-        $ValidationManager->registerAttributesTranslationId('webflorist-validation-manager::attributes');
+        $ValidationManager->registerAttributesTranslationId('webflorist-validation-manager::default_attributes');
 
         // Replacer for error-messages of regex-validator to include the invalid characters.
         Validator::replacer('regex', function ($message, $attribute, $rule, $parameters) {
